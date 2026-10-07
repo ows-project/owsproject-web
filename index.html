@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f9faf8" />
+    <meta
+      name="description"
+      content="Meet Open Worship Software: a free, open-source alternative to EasyWorship. A lightweight worship presentation app designed for a quick start."
+    />
+    <title>OWS — Free, Open-Source Worship Presentation Software</title>
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Open Worship Software" />
+    <meta property="og:title" content="OWS — See you on Sunday." />
+    <meta
+      property="og:description"
+      content="A free, open-source alternative to EasyWorship. Lightweight worship presentation software, built for a quick start."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="OWS — Open Worship Software" />
+    <meta
+      name="twitter:description"
+      content="A free, open-source alternative to EasyWorship. Built for the person behind the slides."
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Open Worship Software",
+        "alternateName": "OWS",
+        "inLanguage": "en",
+        "description": "Free, open-source worship presentation software and an alternative to EasyWorship.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "OWS Project",
+          "sameAs": ["https://github.com/ows-project"]
+        }
+      }
+    </script>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23233630'/%3E%3Cpath d='M8 16v9m8-15v20m8-17v14m8-11v8' stroke='%23c8edb2' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="OWS — home"
+        ><span class="brand-icon" aria-hidden="true"
+          ><i></i><i></i><i></i><i></i></span
+        ><span>ows<span class="brand-dot">.</span></span></a
+      >
+      <span class="header-note">OPEN WORSHIP SOFTWARE</span>
+      <a
+        class="source-link"
+        href="https://github.com/ows-project"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16" />
+        </svg>
+        Follow on GitHub <span aria-hidden="true">↗</span></a
+      >
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-atmosphere" aria-hidden="true">
+          <i></i><i></i><i></i>
+        </div>
+        <div class="hero-copy">
+          <div class="eyebrow">JOIN THE WAITLIST</div>
+          <h1 id="hero-title">See you <span>on Sunday.</span></h1>
+          <p class="description">
+            Your first song shouldn't start with a loading screen.<br />A
+            lightweight, open-source alternative to EasyWorship.<br
+              class="desktop-break"
+            />
+            Free to use. Built for a quick start.
+          </p>
+          <form id="waitlist-form">
+            <label for="email">Get a heads-up when it's ready.</label>
+            <div class="signup-row">
+              <div class="email-field">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="5" width="18" height="14" rx="3" />
+                  <path d="m3 6 9 7 9-7" />
+                </svg>
+                <input
+                  id="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="Your email address"
+                  disabled
+                  maxlength="254"
+                  aria-describedby="form-note"
+                />
+              </div>
+              <button
+                class="submit-button"
+                type="button"
+                disabled
+              >
+                Opening soon <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+            <p id="form-note">We hate spam too! Don't worry.</p>
+          </form>
+        </div>
+        <div class="product-area">
+          <div class="product-peek" id="product-peek">
+            <div
+              class="app-window"
+              aria-label="OWS application concept preview"
+              inert
+            >
+              <div class="window-bar">
+                <div class="window-dots" aria-hidden="true">
+                  <i></i><i></i><i></i>
+                </div>
+                <span><b>ows.</b> &nbsp; Sunday service</span
+                ><span class="window-meta">● &nbsp; Saved</span>
+              </div>
+              <div class="app-toolbar">
+                <span class="toolbar-new">＋ &nbsp; New</span
+                ><span>▱ &nbsp; Open</span><span>↧ &nbsp; Save</span
+                ><span class="toolbar-spacer"></span>
+                <button class="live-pill" id="go-live">Go Live</button>
+                <span class="toolbar-secondary"
+                  >Alerts &nbsp; Logo &nbsp; Black &nbsp; Clear</span
+                >
+                <span class="on-air">● Live On</span>
+              </div>
+              <div class="workspace">
+                <aside class="schedule" aria-label="Sample service schedule">
+                  <div class="panel-title">Schedule <span>＋</span></div>
+                  <div class="schedule-label">SUNDAY, OCTOBER 11</div>
+                  <div class="schedule-item">
+                    <span>01</span>
+                    <div>Welcome<small>Opening</small></div>
+                  </div>
+                  <div class="schedule-item selected">
+                    <span>♫</span>
+                    <div>Here together<small>3 slides · Worship</small></div>
+                    <i>⋮</i>
+                  </div>
+                  <div class="schedule-item">
+                    <span>03</span>
+                    <div>Psalm 100<small>Scripture</small></div>
+                  </div>
+                  <div class="schedule-item">
+                    <span>04</span>
+                    <div>Prayer<small>Closing</small></div>
+                  </div>
+                  <div class="schedule-bottom">4 items <span>↕</span></div>
+                </aside>
+                <div class="slide-panel">
+                  <div class="panel-title">
+                    Preview <span class="muted">3 slides</span>
+                  </div>
+                  <div class="slide-viewport">
+                    <div class="slide-track">
+                      <button
+                        class="slide-option active"
+                        data-slide="0"
+                        aria-label="Show slide 1: first verse"
+                        aria-pressed="true"
+                      >
+                        <span class="slide-number">01</span
+                        ><span class="slide-mini landscape"
+                          >Here in Your presence<br />we gather as one</span
+                        ><small>VERSE 1</small>
+                      </button>
+                      <button
+                        class="slide-option"
+                        data-slide="1"
+                        aria-label="Show slide 2: second verse"
+                        aria-pressed="false"
+                      >
+                        <span class="slide-number">02</span
+                        ><span class="slide-mini landscape"
+                          >With our hearts open<br />we lift up Your name</span
+                        ><small>VERSE 2</small>
+                      </button>
+                      <button
+                        class="slide-option"
+                        data-slide="2"
+                        aria-label="Show slide 3: chorus"
+                        aria-pressed="false"
+                      >
+                        <span class="slide-number">03</span
+                        ><span class="slide-mini landscape"
+                          >One song, many voices<br />all lifted to You</span
+                        ><small>CHORUS</small>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="preview-selection">
+                    Here together · <span id="preview-count">Slide 2 of 3</span>
+                  </div>
+                </div>
+                <div class="live-panel">
+                  <div class="panel-title">
+                    Live <span class="on-air">● ON AIR</span>
+                  </div>
+                  <div class="live-canvas">
+                    <div class="output-meta">
+                      <span>Live output 1920 × 1080</span
+                      ><span>On screen: Here together</span>
+                    </div>
+                    <div class="live-grid" aria-label="Live song slides"></div>
+                  </div>
+                  <div class="live-caption">
+                    <span>Here together</span
+                    ><span id="slide-count">1 / 3</span>
+                  </div>
+                  <div class="slide-navigation">
+                    <button id="previous" aria-label="Previous slide">←</button
+                    ><span>Ready for the next verse.</span
+                    ><button id="next" aria-label="Next slide">→</button>
+                  </div>
+                </div>
+              </div>
+              <div class="library">
+                <div class="resources-bar">
+                  <b>Resources</b><span>Collapse resources</span
+                  ><span>Reset layout</span><span>Live output 1920 × 1080</span>
+                </div>
+                <div class="library-tabs">
+                  <span class="current">♫ &nbsp; Songs</span
+                  ><span>▤ &nbsp; Scriptures</span><span>▧ &nbsp; Media</span
+                  ><span>▣ &nbsp; Presentations</span
+                  ><span>◈ &nbsp; Themes</span>
+                </div>
+                <div class="library-content">
+                  <div class="collections">
+                    <b>Collections</b><span>All songs <i>24</i></span
+                    ><span>Favorites <i>8</i></span>
+                  </div>
+                  <div class="song-table">
+                    <div class="search-song">
+                      ⌕ &nbsp; Search your songs… <span>＋ New song</span>
+                    </div>
+                    <div class="song-row table-header">
+                      <span>SONG TITLE</span><span>SLIDES</span>
+                    </div>
+                    <div class="song-row">
+                      <span>♫ &nbsp; Here together</span><span>3 slides</span>
+                    </div>
+                    <div class="song-row">
+                      <span>♫ &nbsp; A song of thanks</span
+                      ><span>4 slides</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="app-status">
+                <span><span class="small-dot"></span> Ready when you are</span
+                ><span>Made for Sunday mornings.</span>
+              </div>
+            </div>
+          </div>
+          <div class="preview-caption">
+            <span
+              >Design preview <span class="caption-dot">·</span> Work in
+              progress</span
+            >
+            <button
+              id="preview-toggle"
+              aria-expanded="false"
+              aria-controls="product-peek"
+            >
+              Explore the preview <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>For the person behind the slides.</span><span>OWS Project</span
+      ><a
+        href="https://github.com/ThomasBudiarjo/sela"
+        target="_blank"
+        rel="noopener noreferrer"
+        >See what's taking shape ↗</a
+      >
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
