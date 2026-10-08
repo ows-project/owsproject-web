@@ -58,8 +58,3 @@ previewToggle.addEventListener("click", () => {
     .classList.toggle("expanded", expanded);
   document.querySelector(".app-window").inert = !expanded;
 });
-
-// Controls stay disabled in HTML, including when JavaScript is unavailable.
-document.querySelector("#waitlist-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-});

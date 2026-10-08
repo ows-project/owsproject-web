@@ -91,7 +91,11 @@
             />
             Free to use. Built for a quick start.
           </p>
-          <form id="waitlist-form">
+          <form
+            id="waitlist-form"
+            action="https://waitinglist.owsproject.com/f/waiting-list"
+            method="post"
+          >
             <label for="email">Get a heads-up when it's ready.</label>
             <div class="signup-row">
               <div class="email-field">
@@ -107,20 +111,20 @@
                 </svg>
                 <input
                   id="email"
+                  name="email"
                   type="email"
                   autocomplete="email"
                   placeholder="Your email address"
-                  disabled
+                  required
                   maxlength="254"
                   aria-describedby="form-note"
                 />
               </div>
               <button
                 class="submit-button"
-                type="button"
-                disabled
+                type="submit"
               >
-                Opening soon <span aria-hidden="true">↗</span>
+                Join waitlist <span aria-hidden="true">↗</span>
               </button>
             </div>
             <p id="form-note">We hate spam too! Don't worry.</p>
