@@ -1,11 +1,14 @@
 const waitlistForm = document.querySelector("#waitlist-form");
 const submitButton = waitlistForm.querySelector('button[type="submit"]');
+const formStatus = document.querySelector("#form-status");
+const submitLabel = submitButton.innerHTML;
 
 waitlistForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (submitButton.disabled) return;
 
-  const body = new URLSearchParams(new FormData(waitlistForm));
+  const body = JSON.stringify(Object.fromEntries(new FormData(waitlistForm)));
+  formStatus.textContent = "";
   submitButton.disabled = true;
   submitButton.textContent = "Joining…";
   waitlistForm.setAttribute("aria-busy", "true");
@@ -13,14 +16,18 @@ waitlistForm.addEventListener("submit", async (event) => {
   try {
     const response = await fetch(waitlistForm.action, {
       method: "POST",
-      headers: { Accept: "application/json" },
+      headers: { "Content-Type": "application/json" },
       body,
     });
-    window.location.assign(
-      response.ok ? "/waitlist/success/" : "/waitlist/error/",
-    );
+    if (!response.ok) throw new Error("Signup failed");
+    formStatus.textContent = "You're on the waitlist! Thanks for joining.";
+    waitlistForm.reset();
   } catch {
-    window.location.assign("/waitlist/error/");
+    formStatus.textContent = "Couldn't join the waitlist. Please try again.";
+  } finally {
+    submitButton.disabled = false;
+    submitButton.innerHTML = submitLabel;
+    waitlistForm.removeAttribute("aria-busy");
   }
 });
 

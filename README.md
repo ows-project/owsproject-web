@@ -21,23 +21,24 @@ Keep these Workers Builds settings:
 - Deploy command: `npx wrangler deploy`
 
 Validate packaging without publishing with `npm run build && npx wrangler deploy --dry-run`.
-The default static asset routing serves the separate waitlist result pages;
-do not enable the single-page-application fallback for this multi-page site.
 
-## Waitlist result routes
+## Waitlist form
 
-- `/waitlist/success/`: signup confirmation and a link home.
-- `/waitlist/error/`: failed signup and a link back to the form.
+With JavaScript, the form sends a JSON POST using `fetch` to the
+[Formstash](https://github.com/ows-project/formstash) backend at
+`https://waitinglist.owsproject.com/f/waiting-list`. JSON requests avoid
+Formstash's configured success-page redirect. A small, accessible message below
+the form confirms success or asks the visitor to retry after an HTTP or network
+failure. The email is cleared only on success, and the submit button is disabled
+while the request is pending to prevent duplicate submissions.
 
-Both are static HTML pages that share `src/style.css` and work without JavaScript. Vite builds each route into its own directory with an `index.html`; configure the static host to serve directory index files rather than rewriting these routes to the landing page. Result pages are marked `noindex`.
-
-With JavaScript, the form sends a URL-encoded POST to the backend and navigates to the success route for a successful HTTP response, or the error route for a failed response or network error. The submit button is disabled while the request is pending to prevent duplicate submissions. The deployed frontend origin must be in the backend's CORS allowlist.
-
-Without JavaScript, the browser submits directly to the backend. To show these result pages in that fallback, the backend must respond with `303 See Other` and a `Location` header pointing to the appropriate route on the deployed frontend domain. No redirect form fields are added because the endpoint's supported redirect configuration is not known.
+The deployed frontend origin must be allowed by the backend's CORS settings.
+Without JavaScript, the browser submits directly to Formstash, which controls
+the response or configured success redirect.
 
 ## Current limits
 
-The waitlist form submits the required email field via POST to `https://waitinglist.owsproject.com/f/waiting-list`, including without JavaScript. The mailing-list backend handles storage; the frontend handles navigation to the result pages when JavaScript is available.
+The mailing-list backend handles storage; the frontend only submits the required email field and displays the result.
 
 The demo is manual-only. There is no autoplay, background motion, or playback control.
 
