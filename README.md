@@ -18,11 +18,13 @@ Build with `npm run build`. Deploy the resulting `dist/` directory to a static h
 
 Both are static HTML pages that share `src/style.css` and work without JavaScript. Vite builds each route into its own directory with an `index.html`; configure the static host to serve directory index files rather than rewriting these routes to the landing page. Result pages are marked `noindex`.
 
-The backend must redirect browser submissions with `303 See Other` and a `Location` header pointing to the appropriate route on the deployed frontend domain. These pages do not change the backend's current JSON response or origin allowlist. No redirect form fields are added because the endpoint's supported redirect configuration is not known.
+With JavaScript, the form sends a URL-encoded POST to the backend and navigates to the success route for a successful HTTP response, or the error route for a failed response or network error. The submit button is disabled while the request is pending to prevent duplicate submissions. The deployed frontend origin must be in the backend's CORS allowlist.
+
+Without JavaScript, the browser submits directly to the backend. To show these result pages in that fallback, the backend must respond with `303 See Other` and a `Location` header pointing to the appropriate route on the deployed frontend domain. No redirect form fields are added because the endpoint's supported redirect configuration is not known.
 
 ## Current limits
 
-The waitlist form submits the required email field via POST to `https://waitinglist.owsproject.com/f/waiting-list`, including without JavaScript. The mailing-list backend handles storage and the response after submission.
+The waitlist form submits the required email field via POST to `https://waitinglist.owsproject.com/f/waiting-list`, including without JavaScript. The mailing-list backend handles storage; the frontend handles navigation to the result pages when JavaScript is available.
 
 The demo is manual-only. There is no autoplay, background motion, or playback control.
 

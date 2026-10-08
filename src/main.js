@@ -1,3 +1,29 @@
+const waitlistForm = document.querySelector("#waitlist-form");
+const submitButton = waitlistForm.querySelector('button[type="submit"]');
+
+waitlistForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  if (submitButton.disabled) return;
+
+  const body = new URLSearchParams(new FormData(waitlistForm));
+  submitButton.disabled = true;
+  submitButton.textContent = "Joining…";
+  waitlistForm.setAttribute("aria-busy", "true");
+
+  try {
+    const response = await fetch(waitlistForm.action, {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body,
+    });
+    window.location.assign(
+      response.ok ? "/waitlist/success/" : "/waitlist/error/",
+    );
+  } catch {
+    window.location.assign("/waitlist/error/");
+  }
+});
+
 const options = [...document.querySelectorAll(".slide-option")];
 const liveGrid = document.querySelector(".live-grid");
 const liveOptions = options.map((option, i) => {
