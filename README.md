@@ -11,6 +11,19 @@ npm run dev
 
 Build with `npm run build`. Deploy the resulting `dist/` directory to a static host.
 
+## Cloudflare Workers deployment
+
+The checked-in `wrangler.jsonc` deploys `dist/` as static assets for the
+`owsproject-web` Worker. No Cloudflare Vite plugin or Worker script is needed.
+Keep these Workers Builds settings:
+
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+
+Validate packaging without publishing with `npm run build && npx wrangler deploy --dry-run`.
+The default static asset routing serves the separate waitlist result pages;
+do not enable the single-page-application fallback for this multi-page site.
+
 ## Waitlist result routes
 
 - `/waitlist/success/`: signup confirmation and a link home.
